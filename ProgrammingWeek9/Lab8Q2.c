@@ -17,7 +17,7 @@
 
 int main () {
     // Declare a 3x2 array
-    int arr[ROWS][COLS] = {0};
+    int arr[ROWS][COLS];
     
     // Variables for loops 
     int smallest;
@@ -75,7 +75,7 @@ int main () {
     // Calculate and display average
     average = (float)sum / (ROWS * COLS);
 
-    printf("Average value: %f\n", average);
+    printf("Average value: %0.2f\n", average);
 
     return 0;
 }
