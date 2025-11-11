@@ -1,9 +1,19 @@
 /*
-    Write a program that uses a 3x2 (2-D) array. Your program must do the following:
-    a) Enter values into the array.
-    b) Display the values in the array to standard output.
-    c) Find the smallest & largest value and display both to standard output.
-    d) Calculate the average of the values and display to standard output.
+    Lab 8 - Question 1
+
+    Assuming an integer array called ‘arr’ with 10 elements, what is in arr[8] after the
+    following code is executed?
+
+    for (i = 0; i < 10; i++)
+    {
+    arr[i] = 9 - i;
+    }
+    // Display the contents of arr[8]
+    for (i = 0; i < 10; i++)
+    {
+    arr[i] = arr[ arr[i] ];
+    }
+    // Display the contents of arr[8]
 
     Nadyla Da Cunha Barbosa
 
@@ -11,57 +21,29 @@
 */
 
 #include <stdio.h>
-
-#define ROWS 3
-#define COLS 2
+#define SIZE 10
 
 int main () {
-    int arr[ROWS][COLS] = {0};
-    
-    int i = 0;
-    int j = 0;
-    
-    int smallest;
-    int largest;
-    
-    int sum = 0;
-    float average = 0.0;
+    int arr[SIZE];
+    int i;
 
-    for (i = 0; i < ROWS; i++)
+    // First loop to initialize the array
+    for (i = 0; i < SIZE; i++)
     {
-        for (j = 0; j < COLS; j++)
-        {
-            smallest = largest = arr[0][0]; // Initialize smallest and largest with the first element
-            printf("Enter value for arr[%d][%d]: ", i, j);
-            scanf("%d", &arr[i][j]);
-
-            sum += arr[i][j];
-
-            if (arr[i][j] > largest)
-            {
-                largest = arr[i][j];
-            }
-            if (arr[i][j] < smallest)
-            {
-                smallest = arr[i][j];
-            }
-        }
+        arr[i] = 9 - i;
     }
 
-    printf("\nThe values in the array are:\n");
-    for (i = 0; i < ROWS; i++)
+    // Display the contents of arr[8] after first loop
+    printf("Value of arr[8] after first loop: %d\n", arr[8]);
+
+    // Second loop to modify the array
+    for (i = 0; i < SIZE; i++)
     {
-        for (j = 0; j < COLS; j++)
-        {
-            printf("%d ", arr[i][j]);
-        }
-        printf("\n");
+        arr[i] = arr[arr[i]];
     }
 
-    printf("\nSmallest value: %d\n", smallest);
-    printf("Largest value: %d\n", largest); 
-    average = sum / (float)(ROWS * COLS);
-    printf("Average value: %.2f\n", average);
+    // Display the contents of arr[8] after second loop
+    printf("Value of arr[8] after second loop: %d\n", arr[8]);
 
     return 0;
 }
