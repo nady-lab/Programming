@@ -16,14 +16,16 @@
 #define COLS 2
 
 int main () {
+    // Declare a 3x2 array
     int arr[ROWS][COLS] = {0};
     
+    // Variables for loops
     int i = 0;
     int j = 0;
     
+    // Variables for smallest, largest, sum, and average
     int smallest;
     int largest;
-    
     int sum = 0;
     float average = 0.0;
 
@@ -31,12 +33,15 @@ int main () {
     {
         for (j = 0; j < COLS; j++)
         {
-            smallest = largest = arr[0][0]; // Initialize smallest and largest with the first element
+            // Initialize smallest and largest with the first element
+            smallest = largest = arr[0][0]; 
             printf("Enter value for arr[%d][%d]: ", i, j);
             scanf("%d", &arr[i][j]);
 
+            // Update sum
             sum += arr[i][j];
 
+            // Update smallest and largest
             if (arr[i][j] > largest)
             {
                 largest = arr[i][j];
@@ -48,18 +53,23 @@ int main () {
         }
     }
 
+    // Display the values in the array
     printf("\nThe values in the array are:\n");
     for (i = 0; i < ROWS; i++)
     {
         for (j = 0; j < COLS; j++)
         {
+            // Print each element
             printf("%d ", arr[i][j]);
         }
         printf("\n");
     }
 
+    // Display smallest and largest values
     printf("\nSmallest value: %d\n", smallest);
     printf("Largest value: %d\n", largest); 
+
+    // Calculate and display average
     average = sum / (float)(ROWS * COLS);
     printf("Average value: %.2f\n", average);
 
