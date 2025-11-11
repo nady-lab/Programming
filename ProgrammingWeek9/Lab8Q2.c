@@ -19,36 +19,39 @@ int main () {
     // Declare a 3x2 array
     int arr[ROWS][COLS] = {0};
     
-    // Variables for loops
-    int i = 0;
-    int j = 0;
-    
-    // Variables for smallest, largest, sum, and average
+    // Variables for loops 
     int smallest;
     int largest;
+    int i, j = 0;
+    
+    // Variables for smallest, largest, sum, and average
+    
     int sum = 0;
-    float average = 0.0;
+    float average;
 
     for (i = 0; i < ROWS; i++)
     {
         for (j = 0; j < COLS; j++)
         {
             // Initialize smallest and largest with the first element
-            smallest = largest = arr[0][0]; 
+
             printf("Enter value for arr[%d][%d]: ", i, j);
             scanf("%d", &arr[i][j]);
 
+            smallest = largest = arr[0][0];
+
             // Update sum
-            sum += arr[i][j];
+            sum = sum + arr[i][j];
 
             // Update smallest and largest
-            if (arr[i][j] > largest)
-            {
-                largest = arr[i][j];
-            }
-            if (arr[i][j] < smallest)
+            if (smallest > arr[i][j])
             {
                 smallest = arr[i][j];
+            }
+
+            if (largest < arr[i][j])
+            {
+                largest = arr[i][j];
             }
         }
     }
@@ -70,8 +73,9 @@ int main () {
     printf("Largest value: %d\n", largest); 
 
     // Calculate and display average
-    average = sum / (float)(ROWS * COLS);
-    printf("Average value: %.2f\n", average);
+    average = (float)sum / (ROWS * COLS);
+
+    printf("Average value: %f\n", average);
 
     return 0;
 }
