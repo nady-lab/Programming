@@ -25,7 +25,7 @@ int main () {
     int i, j = 0;
     
     // Variables for smallest, largest, sum, and average
-    smallest = largest = arr[0][0];
+    smallest = largest = arr[i][j];
     int sum = 0;
     float average;
 
