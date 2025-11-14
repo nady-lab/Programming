@@ -33,29 +33,48 @@
 
 #include <stdio.h>
 #define SIZE 5
+#define SUBJECT 3
 
 int main() {
     int num_students;
     int students[SIZE];
     int i, j;
-    char name;
-    float grade1, grade2, grade3;
-    float total_grade, average;
+    float sum;
+    char name[SIZE];
+    float marks[SIZE][SUBJECT];
+    float total_grade; 
+    float average[SIZE];
     int menu;
 
     printf("How many students will you be grading?: ");
     scanf("%d", &num_students);
-    students[num_students];
-    
-    for(i = 0; i < num_students; i++)
+
+    while (num_students > SIZE)
     {
-        printf("%d\n", students[i]);
+        printf("TOO MANYYY, try 5 or less: ");
+        scanf("%d", &num_students);
+
+        if (num_students <= SIZE)
+        {
+            students[num_students];
+            
+            for(i = 0; i < num_students; i++)
+            {
+                printf("Enter the name of student %d:\n ", i + 1);
+                scanf(" %c", &name[i]); 
+
+                for(j = 0; j < SUBJECT; j++)
+                {
+                    printf("Enter the marks for subject %d:\n", j);
+                    scanf("%f", &marks[i][j] );
+
+                    sum += marks[i][j];
+                }  
+                
+                printf("%0.2f", sum);
+            }
+        }
     }
-
-
-
-
-
 
     return 0;
 }
