@@ -53,26 +53,28 @@ int main() {
     {
         printf("TOO MANYYY, try 5 or less: ");
         scanf("%d", &num_students);
+    }
 
-        if (num_students <= SIZE)
+    if (num_students <= SIZE)
+    {
+        students[num_students];
+        
+        for(i = 0; i < num_students; i++)
         {
-            students[num_students];
-            
-            for(i = 0; i < num_students; i++)
+            sum[i] = 0;
+            printf("Enter the name of student %d:\n ", i + 1);
+            scanf(" %c", &name[i]); 
+
+            for(j = 0; j < SUBJECT; j++)
             {
-                printf("Enter the name of student %d:\n ", i + 1);
-                scanf(" %c", &name[i]); 
+                printf("Enter the marks for subject %d:\n", j);
+                scanf("%f", &marks[i][j] );
 
-                for(j = 0; j < SUBJECT; j++)
-                {
-                    printf("Enter the marks for subject %d:\n", j);
-                    scanf("%f", &marks[i][j] );
-
-                    sum[i] += marks[i][j];
-                }  
-                
-                printf("%0.2f\n", sum[i]);
-            }
+                sum[i] += marks[i][j];
+            }  
+            
+            printf("%0.2f\n", sum[i]);
+            printf("%c ", name[i]);
         }
     }
 
