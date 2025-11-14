@@ -94,12 +94,12 @@ int main() {
 
         }
 
-        printf("Enter 1 to:\n\tShow each student’s ID and their calculated average.\n");
-        printf("Enter 2 to:\n\tAsk the user for a student index and display all their subject marks.\n");
-        printf("Enter 3 to:\n\tIdentify and display the student with the highest average.\n");
-        printf("Enter 4 to:\n\tIdentify and display the student with the lowest average.\n");
-        printf("Enter 5 to:\n\tSelect a student and change the stored average value.\n"); 
-        printf("Enter 0 to:\n\tFinish program.\n");
+        printf("Enter 1 to:\tShow each student’s ID and their calculated average.\n");
+        printf("Enter 2 to:\tAsk the user for a student index and display all their subject marks.\n");
+        printf("Enter 3 to:\tIdentify and display the student with the highest average.\n");
+        printf("Enter 4 to:\tIdentify and display the student with the lowest average.\n");
+        printf("Enter 5 to:\tSelect a student and change the stored average value.\n"); 
+        printf("Enter 0 to:\tFinish program.\n");
 
         scanf("%d", &menu);
 
