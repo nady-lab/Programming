@@ -39,7 +39,7 @@ int main() {
     int num_students;
     int students[SIZE];
     int i, j;
-    float sum;
+    float sum[SIZE];
     char name[SIZE];
     float marks[SIZE][SUBJECT];
     float total_grade; 
@@ -68,10 +68,10 @@ int main() {
                     printf("Enter the marks for subject %d:\n", j);
                     scanf("%f", &marks[i][j] );
 
-                    sum += marks[i][j];
+                    sum[i] += marks[i][j];
                 }  
                 
-                printf("%0.2f", sum);
+                printf("%0.2f\n", sum[i]);
             }
         }
     }
