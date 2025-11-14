@@ -42,7 +42,6 @@ int main() {
     float sum[SIZE];
     char name[SIZE];
     float marks[SIZE][SUBJECT];
-    float total_grade; 
     float average[SIZE];
     int menu;
 
@@ -61,6 +60,7 @@ int main() {
         
         for(i = 0; i < num_students; i++)
         {
+            average[i] = 0;
             sum[i] = 0;
             printf("Enter the name of student %d:\n ", i + 1);
             scanf(" %c", &name[i]); 
@@ -72,9 +72,50 @@ int main() {
 
                 sum[i] += marks[i][j];
             }  
+            /*printf("Total marks for student %c was: %0.2f\n", name[i], sum[i]);
+
+            */average[i] = sum[i] / SUBJECT;
+            /*printf("Their average was: %0.2f\n", average[i]);
+
+            if (average[i] >= 80 && average[i] <= 100) 
+            {
+                printf("Grade: Merit\n");
+            }
+            else if (average[i] >= 50 && average[i] <= 79)
+            {
+                printf("Grade: Pass\n");
+            }
+            else
+            {
+                printf("Grade: Fail\n");
+            }
+            */
+
+
+        }
+
+        printf("Enter 1 to:\n\tShow each student’s ID and their calculated average.\n");
+        printf("Enter 2 to:\n\tAsk the user for a student index and display all their subject marks.\n");
+        printf("Enter 3 to:\n\tIdentify and display the student with the highest average.\n");
+        printf("Enter 4 to:\n\tIdentify and display the student with the lowest average.\n");
+        printf("Enter 5 to:\n\tSelect a student and change the stored average value.\n"); 
+        printf("Enter 0 to:\n\tFinish program.\n");
+
+        scanf("%d", &menu);
+
+        switch (menu)
+        {
+        case 1:
             
-            printf("%0.2f\n", sum[i]);
-            printf("%c ", name[i]);
+            for(i = 0; i < num_students; i++)
+            {
+               printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: 0\n", name[i], sum[i], average[i]);
+            }
+            break;
+        
+        default:
+            printf("Program Done.");
+            break;
         }
     }
 
