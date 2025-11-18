@@ -25,7 +25,7 @@ int main () {
     int i, j = 0;
     
     // Variables for smallest, largest, sum, and average
-    
+    smallest = largest = arr[i][j];
     int sum = 0;
     float average;
 
@@ -37,8 +37,6 @@ int main () {
 
             printf("Enter value for arr[%d][%d]: ", i, j);
             scanf("%d", &arr[i][j]);
-
-            smallest = largest = arr[0][0];
 
             // Update sum
             sum = sum + arr[i][j];
