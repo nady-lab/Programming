@@ -33,6 +33,7 @@ int main() {
     
     //array to store the product of arrays
     int arr3[ROWS][COLUMNS] = {};
+    
     //declare variables to use in the for loops
     int i, j;
 
@@ -41,32 +42,40 @@ int main() {
         for (j = 0; j < COLUMNS; j++)
         {
             arr3[i][j] = arr1[i][j] * arr2[i][j];
+
         }//end of loop j
         
     }//end of loop i
 
-    //printing of arr1 & arr2
+    //printing of arr1
     printf("\nThe array 1 is:\n");
     for (i = 0; i < ROWS; i++)
     {
         for (j = 0; j < COLUMNS; j++)
         {
-            // Print each element of arr3
+            // Print each element of arr1
             printf("%d ", arr1[i][j]);
-        }
+
+        }//end of inner loop
+
         printf("\n");
-    }
+    }//end of outer loop
+
+    //printing of arr2
     printf("\nThe array 2 is: \n");
     for (i = 0; i < ROWS; i++)
     {
         for (j = 0; j < COLUMNS; j++)
         {
-            // Print each element of arr3
+            // Print each element of arr2
             printf("%d ", arr2[i][j]);
-        }
-        printf("\n");
-    }
 
+        }//end of inner loop
+
+        printf("\n");
+    }//end of outer loop
+
+    //printing of arr3 (product of arr1 & arr2)
     printf("\nThe product of arrays 1 & 2 is:\n");
     for (i = 0; i < ROWS; i++)
     {
@@ -74,9 +83,11 @@ int main() {
         {
             // Print each element of arr3
             printf("%d ", arr3[i][j]);
-        }
+
+        }//end of inner loop
+
         printf("\n");
-    }
+    }//end of outer loop
     
 
     return 0;
