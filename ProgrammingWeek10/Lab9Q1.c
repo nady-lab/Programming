@@ -20,16 +20,20 @@
 
 int main() {
 
-    //how to initialise TWO 3x4 integer arrays
+    //initialise TWO 3x4 integer arrays with random ints
     int arr1[ROWS][COLUMNS] = { 89, 45, 711,
                                 4512, 78, 457,
                                 741, 85, 2,
-                                789, 654, 321};
+                                789, 654, 321 };
 
-    int arr2[ROWS][COLUMNS] = { 64, 5
-        
+    int arr2[ROWS][COLUMNS] = { 64, 585, 895262,
+                                7893, 4529, 73562,
+                                1264, 39847, 943,
+                                947, 3648, 1 };
+    
+    //array to store the product of arrays
     int arr3[ROWS][COLUMNS] = {};
-
+    //declare variables to use in the for loops
     int i, j;
 
     for(i = 0; i < ROWS; i++)
@@ -37,16 +41,20 @@ int main() {
         for (j = 0; j < COLUMNS; j++)
         {
             arr3[i][j] = arr1[i][j] * arr2[i][j];
-        }
+        }//end of loop j
         
-    }
+    }//end of loop i
 
+
+    printf("\nThe product of arrays 1 & 2 is:\n");
     for (i = 0; i < ROWS; i++)
     {
         for (j = 0; j < COLUMNS; j++)
         {
-            printf("%d x %d = %d\n", arr1[i][j], arr2[i][j], arr3[i][j]);
+            // Print each element of arr3
+            printf("%d ", arr1[i][j]);
         }
+        printf("\n");
     }
     
 
