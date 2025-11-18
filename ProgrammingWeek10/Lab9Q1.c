@@ -21,15 +21,15 @@
 int main() {
 
     //initialise TWO 3x4 integer arrays with random ints
-    int arr1[ROWS][COLUMNS] = { 89, 45, 711,
-                                4512, 78, 457,
-                                741, 85, 2,
-                                789, 654, 321 };
+    int arr1[ROWS][COLUMNS] = { 89, 45, 6,
+                                8, 78, 7,
+                                11, 85, 2,
+                                5, 23, 5 };
 
-    int arr2[ROWS][COLUMNS] = { 64, 585, 895262,
-                                7893, 4529, 73562,
-                                1264, 39847, 943,
-                                947, 3648, 1 };
+    int arr2[ROWS][COLUMNS] = { 64, 8, 4,
+                                -8, 25, -45,
+                                65, 5, 1,
+                                67, 41, 1 };
     
     //array to store the product of arrays
     int arr3[ROWS][COLUMNS] = {};
@@ -45,6 +45,27 @@ int main() {
         
     }//end of loop i
 
+    //printing of arr1 & arr2
+    printf("\nThe array 1 is:\n");
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLUMNS; j++)
+        {
+            // Print each element of arr3
+            printf("%d ", arr1[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\nThe array 2 is: \n");
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLUMNS; j++)
+        {
+            // Print each element of arr3
+            printf("%d ", arr2[i][j]);
+        }
+        printf("\n");
+    }
 
     printf("\nThe product of arrays 1 & 2 is:\n");
     for (i = 0; i < ROWS; i++)
@@ -52,7 +73,7 @@ int main() {
         for (j = 0; j < COLUMNS; j++)
         {
             // Print each element of arr3
-            printf("%d ", arr1[i][j]);
+            printf("%d ", arr3[i][j]);
         }
         printf("\n");
     }
