@@ -1,32 +1,31 @@
 /*
-    Program that uses an array to enter 5 integer numbers. Copy the contents of 
+    Write a program that uses an array to enter 5 integer numbers. Copy the contents of
     this array into another array using only a loop.
 
-    Nádyla Da Cunha Barbosa
+    Nadyla Da Cunha Barbosa
 
-    04/11/2025
+    20/11/2025
 */
+
 #include <stdio.h>
-#define NUM 5
+#define SIZE 5
 
 int main() {
-    int numbers[NUM] = {0};
-    int copy[NUM] = {0};
+    int arr1[SIZE] = {1,2,3,4,5};
+    int arr2[SIZE];
     int i = 0;
 
-    for (i = 0; i < NUM; i++)
+    for (i = 0; i < SIZE; i++)
     {
-        printf("Enter an int num: ");
-        scanf("%d", &numbers[i]); 
+        arr2[SIZE - 1 - i] = arr1[i];
     }
     
-    for (i = 0; i < NUM; i++) 
+    for (i = 0; i < SIZE; i++)
     {
-        copy[i] = numbers[i];
-        printf("%d", copy[i]);
+        printf("%d ", arr2[i]);
     }
-
+    
+    printf("\n");
+    
     return 0;
 }
-
-
