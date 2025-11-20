@@ -85,17 +85,17 @@ int main() {
             
         }
 
-        printf("Enter 1 to:\tShow each student’s ID and their calculated average.\n");
-        printf("Enter 2 to:\tAsk the user for a student index and display all their subject marks.\n");
-        printf("Enter 3 to:\tIdentify and display the student with the highest average.\n");
-        printf("Enter 4 to:\tIdentify and display the student with the lowest average.\n");
-        printf("Enter 5 to:\tSelect a student and change the stored average value.\n"); 
-        printf("Enter 0 to:\tFinish program.\n");
-
-        scanf("%d", &menu);
-
-        while (menu != 0)
+        do
         {
+            printf("Enter 1 to:\tShow each student’s ID and their calculated average.\n");
+            printf("Enter 2 to:\tAsk the user for a student index and display all their subject marks.\n");
+            printf("Enter 3 to:\tIdentify and display the student with the highest average.\n");
+            printf("Enter 4 to:\tIdentify and display the student with the lowest average.\n");
+            printf("Enter 5 to:\tSelect a student and change the stored average value.\n"); 
+            printf("Enter 0 to:\tFinish program.\n");
+
+            scanf("%d", &menu);
+
             switch (menu)
             {
             case 1:
@@ -215,23 +215,17 @@ int main() {
 
                 break;
 
+            case 0:
+                
+                printf("Program finished successfully.\n");
+                break;
+
             default:
 
-                printf("Choose another option.\n");
-                break;
-            } 
-
-            printf("Enter 1 to:\tShow each student’s ID and their calculated average.\n");
-            printf("Enter 2 to:\tAsk the user for a student index and display all their subject marks.\n");
-            printf("Enter 3 to:\tIdentify and display the student with the highest average.\n");
-            printf("Enter 4 to:\tIdentify and display the student with the lowest average.\n");
-            printf("Enter 5 to:\tSelect a student and change the stored average value.\n"); 
-            printf("Enter 0 to:\tFinish program.\n");
-
-            scanf("%d", &menu);
+                printf("Invalid option! Try again.\n");
+            }
         }
-
-        printf("Program finished successfully.");
+        while (menu != 0);
         
     }
     
