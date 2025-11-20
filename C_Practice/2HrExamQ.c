@@ -13,7 +13,7 @@
     (e.g., fail/pass/merit or any categories you choose)
 
     After all data is entered, display a menu with the following options:
-    * Option 1
+    * !!Option 1
         Show each student’s ID and their calculated average.
     * Option 2
         Ask the user for a student index and display all their subject marks.
@@ -41,7 +41,7 @@ int main() {
     int students[SIZE];
     int i, j;
     float sum[SIZE];
-    char *name[SIZE];
+    char name[SIZE];
     char name_search;
     char grade[SUBJECT][MAX_CHARACTERS] = {"Merit", "Pass", "Fail"};
     float marks[SIZE][SUBJECT];
@@ -50,7 +50,6 @@ int main() {
 
     printf("How many students will you be grading?: ");
     scanf("%d", &num_students);
-
 
     if (num_students > SIZE)
     {
@@ -64,13 +63,15 @@ int main() {
     }
     if (num_students <= SIZE)
     {
-       for(i = 0; i < num_students; i++)
+        students[num_students];
+
+        for(i = 0; i < num_students; i++)
         {
             average[i] = 0;
             sum[i] = 0;
 
             printf("Enter the name of student %d:\n ", i + 1);
-            scanf(" %c", &*name[i]);
+            scanf(" %c", &name[i]);
 
             for(j = 0; j < SUBJECT; j++)
             {
@@ -103,15 +104,15 @@ int main() {
 
                 if (average[i] >= 80) 
                 {
-                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", *name[i], sum[i], average[i], grade[0]);
+                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[0]);
                 }
                 else if (average[i] >= 50)
                 {
-                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", *name[i], sum[i], average[i], grade[1]);
+                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[1]);
                 }
                 else
                 {
-                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", *name[i], sum[i], average[i], grade[2]);
+                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[2]);
                 }
 
             }
@@ -120,17 +121,14 @@ int main() {
         case 2: 
             
             printf("Enter the first letter of the students name: ");
-            scanf("%c", &name_search);
+            scanf(" %c", &name_search);
 
             for (i = 0; i < num_students; i++)
             {
-                if (*name[i] = name_search)
+                if (name[i] == name_search)
                 {
-                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", *name[i], sum[i], average[i], grade[2]);
-
+                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[2]);
                 }
-
-
             }
             
             break;
