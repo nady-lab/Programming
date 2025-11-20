@@ -43,7 +43,7 @@ int main() {
     float sum[SIZE];
     char name[SIZE];
     char name_search;
-    char grade[SUBJECT][MAX_CHARACTERS] = {"Merit", "Pass", "Fail"};
+    char grade[SIZE];
     float marks[SIZE][SUBJECT];
     float average[SIZE];
     float highest_average;
@@ -95,6 +95,25 @@ int main() {
             printf("Enter 0 to:\tFinish program.\n");
 
             scanf("%d", &menu);
+            printf("\n");
+
+            for(i = 0; i < num_students; i++)
+                {
+
+                    if (average[i] >= 80) 
+                    {
+                        grade[i] = 'M';
+                    }
+                    else if (average[i] >= 50)
+                    {
+                        grade[i] = 'P';
+                    }
+                    else
+                    {
+                        grade[i] = 'F';
+                    }
+
+                }
 
             switch (menu)
             {
@@ -102,21 +121,9 @@ int main() {
                 
                 for(i = 0; i < num_students; i++)
                 {
-
-                    if (average[i] >= 80) 
-                    {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[0]);
-                    }
-                    else if (average[i] >= 50)
-                    {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[1]);
-                    }
-                    else
-                    {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %s\n", name[i], sum[i], average[i], grade[2]);
-                    }
-
+                    printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]);
                 }
+
                 break;
 
             case 2: 
@@ -128,7 +135,7 @@ int main() {
                 {
                     if (name[i] == name_search)
                     {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\n\n", name[i], sum[i], average[i]);
+                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]);
                     }
                 }
                 
@@ -152,7 +159,7 @@ int main() {
                 {
                     if(highest_average == average[i])
                     {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\n\n", name[i], sum[i], average[i]);
+                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]); 
                     }
                 }
 
@@ -176,7 +183,7 @@ int main() {
                 {
                     if(lowest_average == average[i])
                     {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\n\n", name[i], sum[i], average[i]);
+                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]);
                     }
                 }
 
@@ -192,7 +199,7 @@ int main() {
                 {
                     if (name[i] == name_search)
                     {
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\n\n", name[i], sum[i], average[i]);
+                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]);
 
                         sum[i] = 0;
 
@@ -208,7 +215,20 @@ int main() {
         
                         average[i] = sum[i] / SUBJECT;
 
-                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\n\n", name[i], sum[i], average[i]);
+                        if (average[i] >= 80) 
+                        {
+                            grade[i] = 'M';
+                        }
+                        else if (average[i] >= 50)
+                        {
+                            grade[i] = 'P';
+                        }
+                        else
+                        {
+                            grade[i] = 'F';
+                        }
+
+                        printf("Student: %c\tTotal marks: %0.2f\tAverage: %0.2f\tGrade: %c\n\n", name[i], sum[i], average[i], grade[i]);
 
                     }
                 }
