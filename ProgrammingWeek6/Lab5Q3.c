@@ -21,18 +21,36 @@ int main() {
         num[i] = i + 1;
     }
 
-    printf("Enter a num between 1 & 5:\n");
+    printf("Enter a num between 1 & 5, or enter 0 to end the program:\n");
     scanf("%d", &num_user);
     printf("\n");
 
-    for ( i = 0; i < SIZE; i++)
-    {
-        if (num[i] % num_user == 0)
+    do
+    {   
+        if(num_user <= 5)
         {
-            printf("%d\n", num[i]);
-        }
-        
-    }
+            for ( i = 0; i < SIZE; i++)
+            {
+                if (num[i] % num_user == 0)
+                {
+                    printf("%d\n", num[i]);
+                }
+            }
 
+            printf("Enter a num between 1 & 5, or enter 0 to end the program:\n");
+            scanf("%d", &num_user);
+            printf("\n");
+        }
+        else
+        {
+            printf("number entered out of bounds, try again: ");
+            scanf("%d", &num_user);
+            printf("\n");
+        }
+    }
+    while(num_user != 0);
+
+    printf("Program finished successfully!!");
+    
     return 0;
 }
