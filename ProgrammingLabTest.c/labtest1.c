@@ -15,76 +15,92 @@
 */
 
 #include <stdio.h>
+//defined the max amount of elements in the array
 #define MAX 15
 
 int main()
 {
+    //list of variable used throughout the program
     int no_of_terms;
-    int sequence[MAX];
+    int sequence;
     int sum_sequence[MAX];
-    int first_num = 0;
-    int second_num = 1;
+    int first_num;
+    int second_num;
     int i;
     int menu;
 
 
     do{
-
+        //menu with two option -> press 1 to continue with the program & press 2 to finish it
         printf("\nWelcome to the Fibonacci series program\n\n");
         printf("Enter you selection:\n");
         printf("1.\tEnter the number of term to be calculated in the sequence and display\n");
         printf("2.\tEnd program\n\n");
         scanf("%d", &menu);
 
+        //depending on the option chosen 
         switch (menu)
         {
-        case 1:
-            printf("Enter the number of terms to be calculated in the Fibonacci series (max no. is 15): ");
-            scanf("%d", &no_of_terms);
-
-            if(no_of_terms > MAX)
+            case 1:
             {
-                printf("You exceeded the limit try again: ");
+                printf("Enter the number of terms to be calculated in the Fibonacci series (max no. is 15): ");
                 scanf("%d", &no_of_terms);
-            }
-            else
+
+                if(no_of_terms > MAX)
+                {
+                    printf("You exceeded the limit try again: ");
+                    scanf("%d", &no_of_terms);
+                }// end if
+                else
+                {
+                    sequence = 0;
+
+                    for(i = 0; i < no_of_terms; i++)
+                    {
+                        sum_sequence[0] = 0;
+                        sum_sequence[1] = 1;
+                        sum_sequence[i + 2] = 0;                
+
+                        
+                        
+                        sequence = second_num + first_num;
+                        sum_sequence[i + 2] = sequence;
+                        
+                        printf("%d + %d = %d\n", sum_sequence[i], sum_sequence[i + 1], sum_sequence[i + 2]);
+                        first_num = second_num;
+                        second_num = sequence;
+                    }// end for loop
+
+                    printf("The elements in array sum_sequence are:\n");
+
+                    for(i = 0; i < no_of_terms; i++)
+                    {
+                        printf("%d\t", sum_sequence[i]);
+                    }//end for loop
+
+                    printf("\n");
+                }//end else
+
+                break;
+            }//end case 1
+
+            case 2:
             {
-                for(i = 0; i < no_of_terms + 1; i++)
-                {
-                    sum_sequence[i] = 0;
-                    sequence[i] = 0;
+                printf("Ending Program.");
+                break;
+            }//end case 2
 
-                    //THE SUM OF THE CURRENT NUMBER AND THE PREVIOUS NUMBER PRODUCE THE NEXT NUMBER
-                    sequence[i] = first_num + second_num;
-                    sum_sequence[i] = sequence[i] + sequence[i - 1];
-                    
-                    printf("%d + (%d - 1) = %d\n", i, i, sequence[i]);
-                }
+            default:
+            {
+                printf("Invalid option, try again: ");
+                scanf("%d", &menu);
 
-                printf("The elements in array sum_sequence are:\n");
+                break;
+            }//end default
+        
+        }//end switch
 
-                for(i = 0; i < no_of_terms; i++)
-                {
-                    printf("%d\t", sum_sequence[i]);
-                }
-            }
-            break;
-
-        case 2:
-            
-            printf("Ending Program.");
-            break;
-
-        default:
-
-            printf("Invalid option, try again: ");
-            scanf("%d", &menu);
-
-            break;
-        }
-    
-    } while (menu != 2);
-
+    } while (menu != 2); //condition for the menu to keep appearing
 
     return 0;
 }
