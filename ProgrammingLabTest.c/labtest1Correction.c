@@ -2,6 +2,7 @@
     a program to implement the Fibonacci series: 
     (the sum of the current number and the previous number produce the next number)
     **the first two numbers in the sequence are always 0 & 1
+    ** 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
 
 
     1. ask the user for the numb of terms (max 15) to be calculated in the Fibonacci series.
@@ -22,6 +23,7 @@ int main() {
     int menu;
     int i;
     int no_of_terms;
+    int sequence_sum = 0;
     int sequence[MAX];
 
     do
@@ -35,7 +37,7 @@ int main() {
         switch (menu)
         {
         case 1:
-            printf("Enter the number of terms to be calculated in the Fibonacci series (max no. is 15):");
+            printf("Enter the number of terms to be calculated in the Fibonacci series (max no. is 15): ");
             scanf("%d", & no_of_terms);
 
             while (no_of_terms > MAX)
@@ -48,23 +50,33 @@ int main() {
             {
                 for(i = 0; i < no_of_terms; i++)
                 {
-                    
+                    sequence[0] = 0;
+                    sequence[1] = 1;
+
+                    sequence_sum = i + (i + 1) + sequence_sum;
+                    sequence[i + 2] = sequence_sum;
+
+                    printf("%d ", sequence[i]);
                 }
             }
-            
 
             break;
         
         case 2:
 
+            printf("Program Ending...\n");
+
             break;
 
         default:
 
+            printf("Invalid Choice. Try again: ");
+            scanf("%d", & menu);
+
             break;
         }
 
-    } while (menu != 2)
+    } while (menu != 2);
 
     return 0;
 }
