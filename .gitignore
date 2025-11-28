@@ -1,3 +1,7 @@
 C_Practice/
-Fibonacci.c
-labtest1.c
+
+ProgrammingLabTest.c/labtest1.c
+ProgrammingLabTest.c/Fibonacci.c
+
+*.exe
+
