@@ -1,3 +1,4 @@
-# Programming
+# Code Lab Logs
 
-Where I'll keep the continous lab assesments for my programming classes
+My little corner of GitHub where I stash coding exercises, assessment attempts, and the occasional “wow I finally get this” moment.  
+Progress, chaos, breakthroughs — it’s all getting logged here.
