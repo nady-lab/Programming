@@ -53,17 +53,26 @@ int main() {
                 num2 = 1;
                 num3 = 0;
 
-                for(i = 0; i < no_of_terms; i++)
+                sequence[0] = 0;
+                sequence[1] = 1;
+
+
+                for(i = 2; i < no_of_terms; i++)
                 {
-                    sequence[0] = 0;
-                    sequence[1] = 1;
 
                     num3 = num1 + num2;
+                    sequence[i] = num3;
+
                     num1 = num2;
                     num2 = num3;
 
-                    sequence[i + 2] = num3;
- 
+                }
+                printf("\n");
+
+                printf("Fibonacci sequence: ");
+                
+                for(i = 0; i < no_of_terms; i++)
+                {
                     printf("%d ", sequence[i]);
                 }
                 printf("\n");
@@ -79,11 +88,7 @@ int main() {
 
         default:
 
-            while(menu != 1 && menu != 2) 
-            {
-            printf("Invalid Choice. Try again: ");
-            scanf("%d", & menu);
-            } 
+            printf("Invalid Choice.\n");
 
             break;
         }
