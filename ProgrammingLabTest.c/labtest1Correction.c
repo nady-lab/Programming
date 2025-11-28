@@ -23,7 +23,7 @@ int main() {
     int menu;
     int i;
     int no_of_terms;
-    int sequence_sum = 0;
+    int num1, num2, num3;
     int sequence[MAX];
 
     do
@@ -37,6 +37,7 @@ int main() {
         switch (menu)
         {
         case 1:
+
             printf("Enter the number of terms to be calculated in the Fibonacci series (max no. is 15): ");
             scanf("%d", & no_of_terms);
 
@@ -48,16 +49,24 @@ int main() {
 
             if (no_of_terms <= MAX)
             {
+                num1 = 0;
+                num2 = 1;
+                num3 = 0;
+
                 for(i = 0; i < no_of_terms; i++)
                 {
                     sequence[0] = 0;
                     sequence[1] = 1;
 
-                    sequence_sum = i + (i + 1) + sequence_sum;
-                    sequence[i + 2] = sequence_sum;
+                    num3 = num1 + num2;
+                    num1 = num2;
+                    num2 = num3;
 
+                    sequence[i + 2] = num3;
+ 
                     printf("%d ", sequence[i]);
                 }
+                printf("\n");
             }
 
             break;
@@ -70,8 +79,11 @@ int main() {
 
         default:
 
+            while(menu != 1 && menu != 2) 
+            {
             printf("Invalid Choice. Try again: ");
             scanf("%d", & menu);
+            } 
 
             break;
         }
