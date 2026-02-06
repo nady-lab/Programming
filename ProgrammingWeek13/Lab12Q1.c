@@ -7,6 +7,7 @@
 
 #define SIZE 10
 
+// function prototype -> will print the amount of stars
 int stars(int);
 
 int main() {
@@ -14,12 +15,15 @@ int main() {
 
     stars(no_stars);
 
-    printf("\n\nPrinted stars...\n");
+    printf("\n\n%d stars printed.\n", SIZE);
 }// end main()
 
+// function to print stars
 int stars(int num) {
     int i = 0;
 
+    printf("\n");
+    
     for (i = 0; i < num; i++)
     {
         printf("*");
