@@ -23,7 +23,7 @@
 #define SIZE 3
 
 int sum(int, int, int);
-void average(int);
+float average(int);
 
 int main() {
 
@@ -32,7 +32,12 @@ int main() {
 
     // asks the user for 3 numbers and stores them 
     printf("\nPlease enter the three numbers: \n");
-    scanf("%d %d %d", &n1, &n2, &n3);
+
+    // NOT recommended using only one SCANF for better readability
+    //scanf("%d %d %d", &n1, &n2, &n3);
+    scanf("%d", & n1);
+    scanf("%d", & n2);
+    scanf("%d", & n3);
 
     // passes the 3 values that were inputed as parameters to the function sum()
     total_sum = sum(n1, n2, n3);
@@ -46,11 +51,17 @@ int main() {
 //function SUM
 int sum(int a, int b, int c) {
     // returns the sum of the values in the parameter
-    return a + b + c;
+    int total;
+
+    total = a + b + c;
+
+    // returning an equation directly is not ideal -> better to do the equations beforehand and just return the values
+    //return a + b + c;
+    return total;
 }// end function SUM
 
 //function AVERAGE
-void average(int sum) {
+float average(int sum) {
     float avg = 0;
 
     // turns the value entered in the parameter to a float and divides by the amount of numbers
@@ -60,5 +71,5 @@ void average(int sum) {
     // displays the average on screen
     printf("\nThe average of your 3 numbers is: %.2f\n", avg);
 
-    return(average);
+    return avg;
 }// end function AVERAGE
