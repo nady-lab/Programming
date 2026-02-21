@@ -23,9 +23,8 @@ int main() {
     printf("\nEnter a integer: ");
     scanf("%d", & num);
 
-    EvenOdd(& num);
-
-    printf("%d", EvenOdd(& num));
+    printf("\n0 = ODD\t1 = EVEN\n\n");
+    printf("RESULT = %d\n\n", EvenOdd(& num));
 
     return 0;
 }// end main()
