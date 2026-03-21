@@ -1,3 +1,12 @@
+/*
+    A program that asks the user to enter 3 whole numbers and
+    displays these on separate lines.
+
+    Nadyla Barbosa
+
+    07/10/2025
+*/
+
 #include <stdio.h>
 
 int main () 

@@ -21,6 +21,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+// Header file containing character functions -> part b
 #include <ctype.h>
 
 // PART A
@@ -105,6 +107,8 @@ int main()
 
     if(valid)
     {
+        // ASCII-to-integer (atoi) -> converts a numeric string
+        // into its equivalent integer
         nums = atoi(input);
         nums += 1;
 
