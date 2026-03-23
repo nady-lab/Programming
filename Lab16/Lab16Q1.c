@@ -36,10 +36,7 @@ int main()
     printf("\n");
 
     // remove addtional \0 character from fgets
-    if(strlen(input) > 0 && input[strlen(input) - 1] == '\n')
-    {
-        input[strlen(input) - 1] = '\0';
-    }// end if
+    input[strcspn(input, "\n")] = '\0';
 
     printf("The total amount of vowels in your string is: %d\n", vowelCount(input));
 
