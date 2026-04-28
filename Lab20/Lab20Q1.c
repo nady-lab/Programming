@@ -35,13 +35,15 @@ int main()
     {
         printf("\ntext1.txt opened successfully.\n");
 
+        // while the end of the 
         while(fgets(one_line, MAX_CHARS, f1) != NULL)
         {
-            // display the line from file
+            // display the line and line n. from file
             printf("\n%d. %s", lines, one_line);
 
             // increment lines count by 1
             lines++;
+
         }// end while
 
         printf("\n\n");
