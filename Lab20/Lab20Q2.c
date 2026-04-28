@@ -8,8 +8,8 @@
 */
 
 #include <stdio.h>
-#include <string.h>
-
+#include <stdlib.h>
+#include <time.h>
 
 // max chars store per line
 #define MAX_CHARS 1001
@@ -20,10 +20,14 @@ int main()
     FILE *f1;
 
     // variable to store each character in the files at a time
-    char chars1;
+    char chars;
 
     // array to store the strings in the file
     char one_line[MAX_CHARS];
+
+    // variable to track time
+    clock_t start, end;
+    double time_taken;
 
     // open the file for reading
     f1 = fopen("largetext.txt", "r");
@@ -32,26 +36,55 @@ int main()
     if(f1 == NULL)
     {
         printf("\nError opening file\n");
+
+        return 1;
     }// end if
-    else
+
+    printf("\nReading using fgetc(): \n\n");
+    
+    // start timer
+    start = clock();
+
+    // while there's still chars to be read, display the read onws
+    while ((chars = fgetc(f1)) != EOF)
     {
-        printf("\ntext1.txt opened successfully.\n\n");
+        putchar(chars);
+    }// end while
 
-        // while true
-        while(1)
-        {
-            // get character from file 1
-            chars1 = fgetc(f1);
+    // finish timer
+    end = clock();
 
-            printf("%c", chars1);
+    // calculate the total time taken
+    time_taken = (double)(end - start) / CLOCKS_PER_SEC; 
+    
+    printf("\n\n-----------> Time taken using fgetc(): %f seconds\n", time_taken);
 
-        }// end while 
-    }// end else
+    // close file
+    fclose(f1);
 
-    // print newline for readability
-    printf("\n");
+    // open file again for the fgets function
+    f1 = fopen("largetext.txt", "r");
 
-    // close file 1
+    if (f1 == NULL)
+    {
+        printf("\nError opening file (fgets)\n");
+        return 1;
+    }
+
+    printf("\nReading using fgets():\n\n");
+
+    start = clock();
+
+    while (fgets(one_line, MAX_CHARS, f1) != NULL)
+    {
+        fputs(one_line, stdout);
+    }
+
+    end = clock();
+    time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+
+    printf("\n\n-----------> Time taken using fgets(): %f seconds\n", time_taken);
+
     fclose(f1);
 
     return 0;
