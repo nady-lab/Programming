@@ -27,7 +27,10 @@ int main()
 
     // variable to track time
     clock_t start, end;
-    double time_taken;
+    double time_taken1;
+    double time_taken2;
+
+    double latency;
 
     // open the file for reading
     f1 = fopen("largetext.txt", "r");
@@ -55,9 +58,9 @@ int main()
     end = clock();
 
     // calculate the total time taken
-    time_taken = (double)(end - start) / CLOCKS_PER_SEC; 
+    time_taken1 = (double)(end - start) / CLOCKS_PER_SEC; 
     
-    printf("\n\n-----------> Time taken using fgetc(): %f seconds\n", time_taken);
+    printf("\n\n-----------> Time taken using fgetc(): %f seconds\n", time_taken1);
 
     // close file
     fclose(f1);
@@ -81,11 +84,15 @@ int main()
     }
 
     end = clock();
-    time_taken = (double)(end - start) / CLOCKS_PER_SEC;
+    time_taken2 = (double)(end - start) / CLOCKS_PER_SEC;
 
-    printf("\n\n-----------> Time taken using fgets(): %f seconds\n", time_taken);
+    printf("\n\n-----------> Time taken using fgets(): %f seconds\n", time_taken2);
 
     fclose(f1);
+
+    latency = time_taken1 - time_taken2;
+
+    printf("\n\n-----------> Time difference: %f seconds\n", latency);
 
     return 0;
 
