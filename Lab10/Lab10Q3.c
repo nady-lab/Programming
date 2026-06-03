@@ -4,7 +4,7 @@
     MODIFY IT TO -> Allocate a second memory block and store the average value
     calculate in part (iii) in this block.
 
-    Display all of the 5 float values in the first memory block 
+    Display all of the 5 float values in the first memory block
     and their average value in the second memory block on the screen.
 
     Hint: you will need to use 2 float pointers, one pointer to the block of memory
@@ -69,7 +69,7 @@ int main()
         {
             *(ptr2 + i) = sum / NUM;
 
-        }// end for
+        } // end for
 
         // loop to print the values inside the block of memory
         printf("\nThe numbers you put are: \n");
